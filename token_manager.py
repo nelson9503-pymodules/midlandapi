@@ -7,7 +7,7 @@ class TokenManager:
         pass
 
     def get_token(self) -> str:
-        driver_path = chromedriver_autoinstaller.install()
+        driver_path = chromedriver_autoinstaller.install(cwd=True)
         chrome = webdriver.Chrome(driver_path)
         url = "https://www.midland.com.hk/zh-hk/list/estate"
         chrome.get(url)
