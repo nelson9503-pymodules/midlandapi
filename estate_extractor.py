@@ -61,6 +61,8 @@ class EstateExtractor:
             r = requests.get(url, headers=header)
             if "Unauthorized" in r.text and "401" in r.text:
                 self.token = self.token_manager.get_token()
+            elif "502 Bad Gateway" in r.text:
+                self.token = self.token_manager.get_token()
             else:
                 break
         txt = r.text
