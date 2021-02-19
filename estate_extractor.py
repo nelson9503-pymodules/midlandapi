@@ -9,7 +9,7 @@ class EstateExtractor:
         self.token_manager = TokenManager()
         self.token = self.token_manager.get_token()
 
-    def extract(self, page: int) -> dict:
+    def extract(self) -> dict:
         results = self.__extract_all_estates()
         return results
     
