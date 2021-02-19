@@ -21,8 +21,14 @@ class BuildingExtractor:
             phases = buildings["phase"]
             results = {}
             for phase in phases:
-                phase_id = phase["id"]
-                phase_name = phase["name"]
+                if "id" in phase:
+                    phase_id = phase["id"]
+                else:
+                    phase_id = ""
+                if "name" in phase:
+                    phase_name = phase["name"]
+                else:
+                    phase_name = ""
                 for building in phase["buildings"]:
                     building_id = building["id"]
                     building_name = building["name"]
